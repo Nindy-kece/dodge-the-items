@@ -1,0 +1,184 @@
+body {
+    font-family: 'Press Start 2P', Courier, monospace;
+    background: #2e2631;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    margin-top:27px;
+    letter-spacing:2px;
+}
+
+/* --- PIXEL TUTORIAL --- */
+#start-screen {
+    position: fixed;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: #19171b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+#start-screen .tutorial {
+    background: #232126;
+    padding: 23px 32px 19px;
+    border-radius: 7px;
+    box-shadow: 0 3px 24px #090e;
+    margin-bottom: 24px;
+    outline: 2.2px solid #444;
+}
+#start-screen h2 {
+    font-family: inherit;
+    font-size:21px;
+    margin-top:7px;
+    text-decoration: underline;
+    margin-bottom:10px;
+}
+#start-btn {
+    font-size: 19px;
+    padding: 8px 39px 6px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background: #fff178;
+    color: #231c1c;
+    font-family: inherit;
+    font-weight: bold;
+    margin-top: 18px;
+    letter-spacing: 1.2px;
+    box-shadow: 0 2px 10px #340d05;
+    outline: 2px solid #b78b24;
+    transition: background 0.2s;
+}
+#start-btn:hover { 
+    background: #ffe659;
+}
+
+.pancake-demo {
+    width: 16px; height: 12px; display:inline-block; vertical-align:middle;
+    image-rendering: pixelated;
+    background: #dba33a;
+    border: 3px solid #a47525;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 #fff4b6, 0 2px 0 #a47525, 0 4px 0 #b78646;
+    position: relative;
+}
+.pancake-demo:before {
+    content:'';
+    display:block;
+    width:3px; height:3px;
+    background:#fff4c6;
+    position:absolute; top:3px; left:6px;
+}
+.obstacle-demo {
+    width:15px; height:14px; display:inline-block;
+    image-rendering: pixelated;
+    background: #781215;
+    border: 3px solid #f12020;
+    border-radius:2px;
+    margin-left:2px;
+    box-shadow: 0 2px 0 #e85871, 0 0 3px #7f1717;
+} 
+
+/* GAME AREA --- PIXEL HOTEL BACKGROUND --- */
+#game-container {
+    position: relative;
+    margin: 34px auto 0 auto;
+    width: 560px;
+    height: 210px;
+    background: repeating-linear-gradient(
+        90deg, #302531 0 20px, #3c313b 20px 40px
+    ),
+        linear-gradient(180deg, #232126 85%, #1a160c 100%);
+    border: 5px solid #523d33;
+    overflow: hidden;
+    box-shadow: 0 0 17px #211a2ccd, 0 0 70px #120d1390 inset;
+    display: block;
+}
+/* Lantai */
+#game-container:after {
+    content:"";
+    display:block;
+    position:absolute; left:0; bottom:0; width:100%; height:20px;
+    background: repeating-linear-gradient(
+        90deg, #4e3b29 0 14px, #7b6349 14px 36px
+    );
+    border-top: 3px solid #302214;
+}
+
+/* --- PIXEL PANCAKE --- */
+#player {
+    position: absolute;
+    bottom: 20px;
+    left: 54px;
+    width: 27px;
+    height: 18px;
+    image-rendering: pixelated;
+    border-radius:2.2px;
+    background: #dba33a;
+    border: 4px solid #a47525;
+    box-shadow: 0 2px 0 #ffdaa1, 0 7px 0 #bfa668;
+}
+
+#player:before {
+    content:"";
+    display:block;
+    width:9px; height:4px;
+    background:#fff7bc;
+    position:absolute; left:7px; top:3px;
+    opacity:0.90;
+    border-radius:1px;
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 20px;
+    width: 21px;
+    height: 18px;
+    background: #781215;
+    border: 3.5px solid #f12020;
+    border-radius:3px;
+    box-shadow: 0 2px 0 #bf406d, 0 0 4px #231c1c;
+    image-rendering: pixelated;
+}
+/* Eyes pixel - monster */
+.obstacle .eyes {
+    position:absolute;
+    left:6px; top:4px;
+    width:3px; height:3px;
+    background:#eee;
+    box-shadow: 5px 0 0 #eee;
+    border-radius:1px;
+}
+.obstacle .mouth {
+    position:absolute;
+    left:7.2px; top:9.3px;
+    width:6px; height:2.5px;
+    background:#222;
+    border-radius:1px;
+}
+
+@keyframes shake {
+    0% {transform: translateY(0) scale(1,1);}
+    15% {transform: translateY(1px) scale(1.06,0.92);}
+    30% {transform: translateY(-1px) scale(0.97,1.10);}
+    100% {transform: translateY(0) scale(1,1);}
+}
+.obstacle { animation: shake 0.7s infinite; }
+
+#score {
+    font-size: 22px;
+    margin-top: 13px;
+    letter-spacing:1px;
+    font-family:inherit;
+}
+#game-tips {
+    font-size:14px;
+    margin-top:8px;
+    color:#fffbe8;
+    font-family:inherit;
+    letter-spacing:0.3px;
+}
