@@ -11,21 +11,45 @@
     <div id="start-screen">
         <div class="tutorial">
             <h2>Panduan</h2>
-            <p>Ini kamu (pancake pixel): <span class="pancake-demo"></span></p>
-            <p>Hindari "setan" (pixel) ini: <span class="obstacle-demo"></span></p>
+            <div style="margin-bottom:9px;margin-top:-3px;">
+              <span>Ini kamu (pancake pixel): </span>
+              <span class="pancake-demo">
+                <div class="pixel-pancake">
+                  <div class="arm left"></div>
+                  <div class="arm right"></div>
+                  <div class="body"></div>
+                  <div class="smile"></div>
+                  <div class="leg left"></div>
+                  <div class="leg right"></div>
+                  <div class="eye left"></div>
+                  <div class="eye right"></div>
+                </div>
+              </span>
+            </div>
+            <div style="margin-bottom:9px;">
+              <span>Hindari "setan" ini:</span>
+              <span class="obstacle-demo">
+                  <div class="pixel-ghost">
+                    <div class="ghost-face"></div>
+                    <div class="ghost-eye left"></div>
+                    <div class="ghost-eye right"></div>
+                  </div>
+              </span>
+            </div>
             <ul style="text-align:left;display:inline-block;margin-top:7px;">
-                <li>Tekan <strong>Spasi</strong> <br>atau <br> klik/ketuk area game<br> untuk meloncat</li>
-                <li>Lompat tepat waktu untuk selamat dan menambah skor!</li>
-                <li>Jika kena setan, kamu kalah!</li>
+                <li>Tekan <strong>Spasi</strong> <br>atau <br> klik area game<br> untuk meloncat</li>
+                <li>Lompat tepat waktu agar selamat &amp; skor naik.</li>
+                <li>Pancake dikejar, jika ketangkap, kalah!</li>
             </ul>
         </div>
         <button id="start-btn">START</button>
     </div>
     <!-- Game Area -->
     <div id="game-container" style="display:none;">
+        <div id="background-pixel"></div>
         <div id="player"></div>
     </div>
-    <p id="game-tips" style="display:none;">Tekan <strong>Spasi</strong> atau klik di kotak game untuk meloncat!</p>
+    <p id="game-tips" style="display:none;">Tekan <strong>Space</strong> atau klik area untuk meloncat!</p>
     <p id="score" style="display:none;">Skor: 0</p>
     <script src="script.js"></script>
 </body>
