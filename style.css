@@ -1,6 +1,6 @@
 body {
     font-family: 'Press Start 2P', Courier, monospace;
-    background: #231c26;
+    background: #232026;
     color: #fff;
     text-align: center;
     margin: 0;
@@ -8,377 +8,297 @@ body {
 }
 h1 {
     margin-top:18px;
-    margin-bottom:5px;
+    margin-bottom:6px;
     letter-spacing:2px;
-    font-size:22px;
+    font-size:20px;
 }
-
-/* SCREEN */
+/* Start Screen */
 #start-screen {
     position: fixed;
     left: 0; top: 0; width: 100vw; height: 100vh;
-    background: #19171b;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: #161518ee;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
     z-index: 10;
 }
-#start-screen .tutorial {
-    background: #232126;
-    padding: 20px 32px 17px;
-    border-radius: 9px;
-    box-shadow: 0 3px 18px #090e;
+.tutorial {
+    background: #25293b;
+    padding: 20px 30px 17px;
+    border-radius: 10px;
+    box-shadow: 0 3px 13px #17151b88;
     margin-bottom: 23px;
     outline: 2px solid #444;
     min-width:270px;
 }
 #start-screen h2 {
-    font-family: inherit;
-    font-size:20px;
+    font-size:19px;
     text-decoration: underline;
+    margin-bottom:9px;
 }
 #start-btn {
-    font-size: 20px;
-    padding: 8px 44px 7px;
-    border-radius: 5px;
+    font-size: 21px;
+    padding: 7px 43px 7px;
+    border-radius: 7px;
     border: none;
     cursor: pointer;
-    background: #fff178;
+    background: #fefbbe;
     color: #231c1c;
     font-family: inherit;
     font-weight: bold;
     margin-top: 17px;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 10px #2b2122;
-    outline: 2px solid #be9e24;
-    transition: background 0.19s;
+    letter-spacing: .5px;
+    box-shadow: 0 2px 6px #372231;
+    outline: 2px solid #cab653;
+    transition: background 0.14s;
 }
-#start-btn:hover { background: #ffe54f; }
-
-.pancake-demo, .obstacle-demo {
-    display:inline-block;
-    vertical-align:middle;
-    height: 36px;
-}
+#start-btn:hover { background: #fff6cf; }
+/* DEMO Pancake */
+/* All dimension multiples of 2px (pixel-style) */
 .pixel-pancake {
     position: relative;
     display: inline-block;
-    width: 34px;
-    height: 32px;
+    width: 36px; height: 34px;
 }
 .pixel-pancake .body {
     position: absolute;
-    left: 8px; top: 9px;
-    width: 18px; height: 12px;
-    background: #FFD076;
-    border: 2px solid #7d5027;
-    border-radius: 6px 9px 8px 7px;
-    box-shadow: 0 0 0 1px #aa8948;
+    left: 7px; top: 8px;
+    width: 22px; height: 15px;
+    background: #FCCF66;
+    border: 2px solid #874e24;
+    border-radius: 5px;
 }
 .pixel-pancake .arm {
     position: absolute;
     width: 8px;
-    height: 3px;
+    height: 4px;
     background: #e1a278;
-    border-radius: 2.5px;
-    z-index: 3;
+    border-radius: 2px;
 }
-.pixel-pancake .arm.left {left: 0px; top: 13px; transform: rotate(-19deg);}
-.pixel-pancake .arm.right {right: 0px; top: 13px; transform: rotate(15deg);}
+.pixel-pancake .arm.left {left: -2px; top:12px;}
+.pixel-pancake .arm.right {right: -2px; top:12px;}
 .pixel-pancake .leg {
     position: absolute;
-    width: 8px; height: 3px;
-    background: #7d5027;
-    border-radius: 1.6px;
-    z-index: 3;
+    width: 8px; height: 4px;
+    background: #7c5024;
+    border-radius: 1.5px;
 }
-.pixel-pancake .leg.left {bottom: 0px; left: 9px; transform: rotate(-13deg);}
-.pixel-pancake .leg.right {bottom: 0px; left: 15px; transform: rotate(13deg);}
+.pixel-pancake .leg.left {bottom: -1px; left:11px;}
+.pixel-pancake .leg.right {bottom: -1px; left:17px;}
 .pixel-pancake .eye {
     position: absolute;
-    width: 2.7px;
-    height: 2.5px;
-    background: #222;
-    border-radius: 1.3px;
-    top: 13px;
+    left: 13px;
+    top: 14px;
+    width: 4px; height: 4px;
+    background: #181716;
+    border-radius: 2px;
 }
-.pixel-pancake .eye.left { left: 14.1px;}
-.pixel-pancake .eye.right { left: 19.1px;}
+.pixel-pancake .eye.right { left: 20px}
 .pixel-pancake .smile {
     position: absolute;
-    top: 16px; left: 13.8px;
-    width: 6.5px; height: 2.8px;
-    border-radius: 0 0 3px 3px;
-    background: none;
-    border-bottom: 2px solid #282b10;
+    left: 15px; top:19px;
+    width: 8px; height: 2px;
+    background: #957433;
+    border-radius: 4px;
+    border-bottom: 2px solid #593407;
 }
-
-/* Monster - red ghost/setan */
+/* Demo Setan Pixel: Putih, kotak */
 .pixel-ghost {
-    position:relative; display:inline-block;
-    width:22px; height:27px;
+    position: relative;
+    width: 24px; height: 24px;
 }
-.pixel-ghost .ghost-face {
+.pixel-ghost .body {
     position: absolute;
-    left:3px; top:4px;
-    width:16px; height:15.4px;
-    background: #ec1b24;
-    border-radius: 6px 7px 8px 8px/12px 11px 7px 13px;
-    border: 2.7px solid #77080e;
-    box-shadow:0 1.9px 0 #f88086 inset, 0 0 0px 1.8px #66121B;
+    left: 2px; top:3px;
+    width: 19px; height: 15px;
+    background: #fff;
+    border: 2.5px solid #63aef9;
+    border-radius: 5px;
+    box-shadow: 0 1px 7px #b4efff99 inset;
 }
-.pixel-ghost .ghost-eye.left {
-    position: absolute; width:3.3px; height:4.2px;
-    background:#fff; left:9px; top:10.5px; border-radius:73%;
-    box-shadow: 5px 0 0 #fff;
-    border-bottom:1px solid #c23a3a;
+.pixel-ghost .eye.left, .pixel-ghost .eye.right {
+    position: absolute; background: #63aef9; width:4px;height:4px;top:9px;
+    border-radius:1.5px;
+}
+.pixel-ghost .eye.left { left:6px;}
+.pixel-ghost .eye.right{ left:13px;}
+.pixel-ghost .mouth{
+    position: absolute; left:9px; top:14px; width:7px;height:3px;
+    border-bottom:2px solid #60bbe7;border-radius:0 0 4px 4px;
+    background: none;
 }
 
-/***********
- HOTEL PIXEL HALLWAY BG
-***********/
+/* --------- GAME PIXEL HOTEL BG --------- */
 #game-container {
     position: relative;
     margin: 30px auto 0 auto;
     width: 565px;
-    height: 225px;
-    background: #232222;
-    border: 5px solid #232019;
-    overflow: hidden;
-    box-shadow: 0 0 17px #321a2c, 0 0 40px #120d1390 inset;
-}
-#hotel-bg {
-    position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index:1;
-    pointer-events:none;
-    background:
-        /* left wall shadow */
-        linear-gradient(90deg, #322a33 0 45px, transparent 46px),
-        /* right wall shadow */
-        linear-gradient(-90deg, #322a33 0 45px, transparent 46px),
-        /* main wall bg */
-        linear-gradient(180deg, #685878 60%, #3f3246 110px, #211017 100% ),
-        /* subtle wall texture */
-        repeating-linear-gradient(90deg,rgba(80,74,88,0.13) 0 7px,transparent 7px 14px),
-        repeating-linear-gradient(180deg,rgba(255,255,255,0.07) 0 13px,transparent 14px 19px);
-}
-
-/* DOORS */
-.doors {
-    position: absolute;
-    top: 65px;
-    width: 85px;
-    height: 120px;
-}
-.doors.left { left:6px;}
-.doors.right { right:6px;}
-.doors .door {
-    position: absolute;
-    width: 30px; height: 69px;
-    background: #b09774;
-    border: 3.2px solid #6b4d28;
-    border-radius:4px;
-    box-shadow: 0 4px 0 #6c3d23 inset,0 1px 5px #231710 ;
-}
-.doors.left .door { left:4px;}
-.doors.right .door { right:4px;}
-.doors .door .knob {
-    position: absolute;
-    right:4px; bottom:23px;
-    width:5px; height:4px;
-    background: #fff7a2;
-    border-radius:10px;
-    border: 1.3px solid #8a6c2a;
-}
-.doors.right .door .knob { left:4px; right:auto;}
-.doors .door:nth-child(2) {
-    top:41px; left:30px;
-    width:31px;
-    background: #d4c4a0;
-    border-color:#7c6c5e;
-}
-.doors.right .door:nth-child(2) {left:auto;right:30px;}
-
-.lamps {
-    position: absolute;
-    left:197px; top:18px;
-    width:162px; height:19px;
-    display: flex;
-    justify-content: space-between;
-}
-.lamps .lamp {
-    position: relative;
-    background:#eee4ce;
-    width:17px; height:7px; margin:2px 25px;
-    border-radius:3px;
-    box-shadow:0 0 32px 13px #fffeb3,0 0 7px 1px #fff966;
-}
-.lamps .lamp-stick {
-    position: absolute;
-    left: 8px; top:7px;
-    width:2.3px; height:10.8px;
-    background:#898181; border-radius:5px;
-}
-.lamps .lamp-top {
-    position: absolute; left:6px; top:-2px; width:5px;height:3px;
-    background:#e2e0d0;border-radius:5px;
-}
-
-.carpet {
-    position: absolute;
-    left:79px; bottom:0;
-    width:407px; height:39px;
-    background: linear-gradient(180deg, #cb1836 75%,#930a22 100%);
-    box-shadow: 0 0 14px 5px #722831a5,last 0 -6px 0 9px rgba(230,95,67,0.41) inset;
-    border-radius:25px 25px 0 0/15px 15px 0 0;
-    border-top:4px solid #fff28a;
+    height: 230px;
+    background: #212020;
+    border: 4px solid #201158;
+    box-shadow: 0 0 10px #36249b90, 0 0 50px #120d1390 inset;
     overflow:hidden;
 }
-.carpet:after {
-    content:'';
-    position:absolute; top:8px; left:0;
-    width:100%; height:6px;
-    background: repeating-linear-gradient(90deg,#f6e1a2 0 15px,transparent 16px 34px);
-}
-.carpet:before {
-    content:'';
-    position:absolute; bottom:1px; left:0;
-    width:100%; height:8px;
-    background: repeating-linear-gradient(90deg,#ad095f 0 13px,transparent 13px 32px);
-}
-.shadows {
-    position:absolute;
-    left:0;bottom:0;width:100%;height:55px;
-    z-index:9;
+#hotel-bg {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%; z-index:0;
     pointer-events:none;
 }
-.shadows:before {
-    content:"";
-    position:absolute;left:0;bottom:0;width:100%;height:34px;
-    background:linear-gradient(180deg,rgba(32,8,7,0.33),transparent 100% );
+/* Ceiling, lamps */
+.ceiling {
+    position:absolute;left:0;top:0;width:100%;height:22px;
+    background: #eeeaf1;
+    border-bottom: 3px solid #70b5d9;
 }
-
-/* Main floor/edges */
-#game-container:after {
-    content:"";
-    display:block;
-    position:absolute; left:0; bottom:0; width:100%; height:9px;
-    background:linear-gradient(90deg,#52352a 95%,#b3bcb9 100%);
-    border-top: 3px solid #726539;
-    z-index:10;
+.lamps {position:absolute;left:24px;top:2px;width:510px;height:19px;}
+.lamp {
+    position:absolute;
+    width:28px;height:12px;
+    background:#ffd;
+    border-radius:4px;
+    border:2px solid #d4bb5e;
+    box-shadow:0px 2px 11px #ffe48a inset;
 }
-
-/* PANCAKE CHARACTER PIXELANIMATION */
+.lamp.l1 { left:6px;}
+.lamp.l2 { left:202px;}
+.lamp.l3 { right:0px;}
+.lamp-stick {
+    position:absolute;left:13.2px;top:11px;width:2.2px;height:12px;
+    background:#888;border-radius:1px;}
+.walls {
+    position:absolute;left:0;top:22px;width:100%;height:110px;
+    background:linear-gradient(180deg,#edeefb 60%,#78b5ef 95%,#446eaa 110px,#363265 120px 96%);
+}
+.doors {
+    position: absolute;
+    top:57px;width:60px;height:100px;
+    display:flex;flex-direction:column;gap:28px;
+}
+.doors-left {left:15px;}
+.doors-right {right:15px;}
+.door {
+    width:34px; height:65px;
+    background: #ecdea5;
+    border:2px solid #c4ad64;
+    border-radius:6px;
+    position:relative;
+    /* pixel style block */
+}
+.door .knob {
+    position:absolute;
+    right:6px; top:37px;
+    width:8px;height:7px;
+    background:#ede4bc;
+    border-radius:4px;
+    border: 2px solid #897313;
+}
+.carpet {
+    position: absolute;
+    left:47px; bottom:0;
+    width:474px;height:58px;
+    background: repeating-linear-gradient(
+        90deg,#fb5695 0 24px,#fcf75c 24px 48px);
+    border-top:8px solid #eede96;
+    box-shadow:0 5px 18px #fafba499,0 1px 22px #fbf4a4 inset;
+    border-bottom-left-radius:16px;
+    border-bottom-right-radius:16px;
+}
+.floor {
+    position:absolute;left:0;bottom:0;width:100%;height:14px;
+    background: linear-gradient(90deg,#CCC39A 85%,#b9c599 100%);
+    border-top:4px solid #f7f1a6;
+}
+/* ---------- PANCAKE PLAYER PIXEL --------- */
 #player {
     position: absolute;
-    z-index:200;
-    bottom: 32px;
-    left: 60px;
-    width: 31px; height: 29px;
+    z-index:12;
+    bottom: 51px;
+    left: 63px;
+    width: 36px; height: 36px;
 }
 #player .body {
-    position: absolute; left:7px; top:8px;
-    width:17px; height:12px;
+    position: absolute;
+    left: 7px; top: 10px;
+    width: 21px; height: 14px;
     background: #FFD076;
-    border: 2.2px solid #7d5027;
-    border-radius: 3px;
-    box-shadow: 0 0 0px 1.2px #a58148;
+    border: 2px solid #805824;
+    border-radius: 6px;
 }
 #player .arm {
     position: absolute;
-    width: 7.4px; height: 2.7px;
+    width: 8px;
+    height: 4px;
     background: #e1a278;
     border-radius: 2px;
-    z-index:5;
-    transition:transform 0.18s;
+    transition:transform 0.19s;
 }
-#player .arm.left {left:-2.2px; top:11px; transform: rotate(-18deg);}
-#player .arm.right {right:-2.1px; top:10.9px; transform: rotate(14deg);}
-#player.active .arm.left {transform:rotate(-37deg);}
-#player.active .arm.right {transform:rotate(29deg);}
+#player .arm.left {left: -2px; top:14px;}
+#player .arm.right {right: -2px; top:14px;}
+#player.active .arm.left{transform:rotate(-32deg);}
+#player.active .arm.right{transform:rotate(29deg);}
 #player .leg {
     position: absolute;
-    width: 7.5px; height: 3px;
-    background: #7d5027;
-    border-radius: 1.3px;
-    z-index:4;
-    transition:transform 0.17s;
+    width: 8px; height: 4px;
+    background: #80602e;
+    border-radius: 1.5px;
+    transition:transform 0.19s;
 }
-#player .leg.left {bottom:3px; left:10px; transform: rotate(-17deg);}
-#player .leg.right {bottom:3px; left:15.9px; transform: rotate(14deg);}
-#player.active .leg.left {transform: rotate(-34deg);}
-#player.active .leg.right {transform: rotate(33deg);}
+#player .leg.left {bottom: -1px; left:12.2px;}
+#player .leg.right {bottom: -1px; left:18px;}
+#player.active .leg.left{transform:rotate(-14deg);}
+#player.active .leg.right{transform:rotate(17deg);}
 #player .eye {
     position: absolute;
-    width: 2.6px;
-    height: 2.6px;
-    background: #111;
-    border-radius: 1.3px;
-    top:13px;
+    left: 13px;
+    top: 16px;
+    width: 4px; height: 4px;
+    background: #181716;
+    border-radius: 2px;
 }
-#player .eye.left { left:14px;}
-#player .eye.right { left:19px;}
+#player .eye.right { left: 20px}
 #player .smile {
     position: absolute;
-    top: 16.2px; left:13.1px;
-    width: 6.2px; height: 2.2px;
-    border-radius: 0 0 2.5px 2.5px;
-    background: none;
-    border-bottom: 2.4px solid #282b10;
-    box-sizing:border-box;
+    left: 15px; top:21px;
+    width: 8px; height: 2px;
+    background: #A1773A;
+    border-radius: 2px;
+    border-bottom: 2px solid #543207;
 }
-#player.active .smile {
-    width:7.4px;
-    left:12.6px;
-    border-radius:10px 10px 15px 20px;
-    border-bottom:2.2px solid #e67a60;
-}
-
-/* ENEMY Ghost/Monster-pixelanim */
+/* ---------- MONSTER setan pixel block --------- */
 .obstacle {
     position: absolute;
-    bottom: 34px;
-    width: 28px; height: 28px;
+    bottom: 52px;
+    width: 24px; height: 24px;
+    z-index:11;
 }
-.obstacle .ghost-face {
-    position:absolute; left:6.5px; top:6px;
-    width:15px; height:13px;
-    background: #ed2029;
-    border-radius: 4px 7px 6px 6px/8px 7px 8px 13px;
-    border: 2.5px solid #3a0719;
-    box-shadow:0 1.8px 0 #e8918fa6,inset 0 -9px 7px -2px #60161736;
-}
-.obstacle .ghost-eye.left {
-    position:    absolute;
-    width:4px; height:4px;
-    background:#fff;
-    left:9.5px; top:11px;
-    border-radius:75% / 66%;
-}
-.obstacle .ghost-eye.right {
+.obstacle .body {
     position: absolute;
-    width:4px; height:4px;
-    background:#fff;
-    left:3px; top:11px;
-    border-radius:66%;
+    left: 2px; top:4px;
+    width: 17px; height: 13px;
+    background: #fff;
+    border: 2.4px solid #60bbf6;
+    border-radius: 4px;
+    box-shadow: 0 0 8px #b4efff77 inset;
 }
-.obstacle .ghost-mouth {
-    position:absolute;
-    left:10.8px;top:17px;
-    width:7px;height:2.8px;
-    border-bottom:2.2px solid #43161a;
-    border-radius:0 0 5px 5px;
+.obstacle .eye.left, .obstacle .eye.right {
+    position: absolute; background: #2c99f6; width:4px;height:4px;top:9px;
+    border-radius:1px;
+}
+.obstacle .eye.left { left:5px;}
+.obstacle .eye.right{ left:11px;}
+.obstacle .mouth{
+    position: absolute; left:7.5px; top:14px; width:7px;height:3px;
+    border-bottom:2px solid #67aabf;border-radius:0 0 2px 2px;
+    background: none;
 }
 @keyframes shake { 
     0% { transform: translateY(0) scaleX(1);}
-    20%{ transform: translateY(-1px) scaleX(0.97);}
-    65% {transform:translateY(1.3px) scaleX(1.04);}
+    40%{ transform: translateY(-1.3px) scaleX(0.97);}
+    70% {transform:translateY(2.1px) scaleX(1.07);}
     100% { transform: translateY(0) scaleX(1);}
 }
-.obstacle { animation: shake 0.6s infinite; }
-
+.obstacle { animation: shake 0.8s infinite;}
 #score {
-    font-size: 20px;
+    font-size: 19px;
     margin-top: 13px;
     font-family:inherit;
 }
@@ -388,4 +308,3 @@ h1 {
     color:#fffbe8;
     font-family:inherit;
 }
-
